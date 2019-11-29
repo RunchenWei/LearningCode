@@ -1,0 +1,18 @@
+sudo apt-get update 
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+
+move to python
+import matplotlib as plt
+plt.get_cachedir() # "path2cache" you will get'/home/xxx/.cache/matplotlib'
+
+rm -rf '/home/buu/.cache/matplotlib' #"path2cache"
+
+
+move to python
+import matplotlib as plt
+import matplotlib.font_manager as font_manager
+fontpath = "/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman.ttf"
+prop=font_manager.FontProperties(fname=fontpath)
+plt.rcParams['font.family'] = prop.get_name()
+print(prop.get_name())
